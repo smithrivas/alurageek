@@ -2,6 +2,7 @@
     --background: #FFFFFF;
     --background2: #EAF2FD;
     --white: #FFFFFF;
+    --gray: #F5F5F5;
     --blue: #2A7AE4;
     --blue2: #2465bb;
     --blue3: #328bff;
@@ -38,9 +39,26 @@ a:link, a:visited, a:active {
     justify-content: space-around;
     margin: 15px 0;
 }
+@media (min-width: 768px){
+    .btn__login{
+        order: 1;    
+    }
+    .navbar{
+        justify-content: space-between;
+        margin: 15px 40px;
+    }
+}
+@media (min-width: 992px){
+    .navbar{     
+        margin: 15px 120px;
+    }
+}
 .btn__login{
     background-color: var(--white);
     border: 2px solid var(--blue);
+    color: var(--blue);
+}
+.btn__login--link{
     color: var(--blue);
 }
 .btn__login:hover{    
@@ -50,6 +68,38 @@ a:link, a:visited, a:active {
 .icon__search{
     font-size: 28px;    
     color: var(--principal);
+}
+.formSearch{
+    display: none;
+}
+@media (min-width: 768px){
+    .formSearch{
+        display: block;
+    }
+    .activeBtn{
+        display: none !important;
+    }
+    .search{
+        background-color: var(--gray);
+        padding: 10px 20px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;        
+    }
+    .search__input{
+        border: none;
+        background-color: transparent;
+        width: 250px;
+    }
+    .search__icon{
+        border: none;
+        background-color: transparent;
+    }
+}
+@media (min-width: 992px){
+    .search__input{     
+        width: 400px;
+    }
 }
 
 /* Banner */
@@ -62,6 +112,18 @@ a:link, a:visited, a:active {
     top: 160px;
     left: 20px;
     color: var(--white);
+}
+@media (min-width: 768px){
+    .banner__info{     
+        top: 180px;
+        left: 20px;        
+    }
+}
+@media (min-width: 992px){
+    .banner__info{     
+        top: 180px;
+        left: 120px;        
+    }
 }
 .banner__info--title{
     font-size: 30px;
@@ -89,13 +151,23 @@ a:link, a:visited, a:active {
 .SectionProducts{
     margin: 0 20px;
 }
+@media (min-width: 768px){
+    .SectionProducts{
+        margin: 0 30px;
+    }
+}
+@media (min-width: 992px){
+    .SectionProducts{
+        margin: 0 120px;
+    }
+}
 .category{
     margin: 20px 0;
 }
 .category__flex{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;    
 }
 .category__link, .product__link{
     color: var(--blue);
@@ -106,6 +178,20 @@ a:link, a:visited, a:active {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;    
+    margin-bottom: 40px;
+}
+@media (min-width: 768px){
+    .products{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .products{
+        margin-bottom: 50px;
+    }
+}
+@media (min-width: 992px){
+    .products{
+        grid-template-columns: repeat(6, 1fr);
+    }
 }
 .product__image{    
     width: 100%;
@@ -141,10 +227,48 @@ a:link, a:visited, a:active {
     font-size: 18px;
     margin-top: 20px;
 }
+@media (min-width: 768px){
+    .contact{
+        display: flex;
+        padding: 0 30px;
+    }
+    .options{
+        text-align: left;    
+        padding: 30px 0px 20px 0px;    
+        width: 270px;
+    }
+}
+@media (min-width: 992px){
+    .contact{
+        padding: 0 120px;
+    }
+    .options{
+        display: flex;
+        width: 500px;
+    }    
+    .options__img{
+        height: 60px;
+    }
+    .options__list{
+        width: 300px;
+        margin: 0 50px;
+    }
+}
 
 /* Form */
 .formSection{
-    margin: 0 20px;
+    padding: 20px;
+}
+@media (min-width: 768px){
+    .formSection{
+        margin-left: 80px;
+        width: 100%;
+    }
+}
+@media (min-width: 992px){
+    .formSection{
+        margin-left: 0px;        
+    }
 }
 .formSection__title{
     color: var(--principal);
@@ -175,6 +299,7 @@ a:link, a:visited, a:active {
 }
 .form__input--message{
     border: none;   
+    width: 100%;
 }
 textarea:focus, input:focus{
     outline: none;
@@ -212,5 +337,76 @@ footer{
 @media (min-width: 768px){
     .social, .social i{
         font-size: 30px;    
+    }
+}
+
+/* --- LOGIN --- */
+.login{
+    background-color: var(--gray);
+    padding: 70px 0;
+}
+@media (min-width: 992px){
+    .login{     
+        padding: 100px 0;
+    }
+}
+.login__title{
+    color: var(--principal);
+    text-align: center;
+}
+.login__inputs{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+@media (min-width: 768px){
+    .login__inputs{        
+        width: 60%;        
+    }
+    .btn__login--width{
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+@media (min-width: 992px){
+    .login__inputs{        
+        width: 30%;        
+    }
+    .btn__login--width{
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+.login__input{
+    border: none;
+    padding: 15px;   
+    border-radius: 4px; 
+    font-size: 18px; 
+    border-bottom: 1px solid var(--placeholder);
+    margin-bottom: 20px;
+}
+
+/* --- PRODUCTS --- */
+.btn__sesion{
+    border: 2px solid red;
+}
+.btn__sesion:hover{
+    border: 2px solid rgb(228, 0, 0);
+}
+.btn__sesion--link{
+    color: red;   
+}
+.products, .allProducts{      
+    margin-top: 30px;  
+    row-gap: 40px;
+}
+@media (max-width: 768px){
+    .category__flex{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .btn__sesion{
+        padding: 10px 10px;
     }
 }
